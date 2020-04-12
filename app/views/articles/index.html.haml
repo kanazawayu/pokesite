@@ -1,0 +1,9 @@
+-# = form_with url: "#", local: true
+-# 　　サーチフィールダ
+.contents
+  - @articles.each do |article|
+    .contents__post
+      %p.content__post__text
+        = article.title
+  -# = paginate(@articles)
+      

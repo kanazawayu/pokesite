@@ -8,4 +8,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.header
+      .header__bar
+        %h1.header__bar__title
+          = link_to "POKEDATA", "/"
+        - if user_signed_in?
+          .user
+            %ul.user__info
+              %li
+                = link_to "#{current_user.name}のページ", "/users/#{current_user.id}", class: "user__buttan"
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user__buttan"
+                = link_to "投稿する", "#", class: "user__buttan"
+        - else
+          .post
+            = link_to "ログイン", new_user_session_path, class: "post__buttan"
+            = link_to "新規登録", new_user_registration_path, class: "post__buttan"
+
     = yield
