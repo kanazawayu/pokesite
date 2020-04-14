@@ -1,0 +1,43 @@
+.content
+  .content__post
+    タイトル：
+    = @article.title
+    製作者：
+    %span.content__post__name
+      = link_to "#{@article.user.name}", "#"
+    .content__post__text
+      = simple_format(@article.body)
+      .more
+        .more__info
+          = image_tag 'arrow_top.png'
+          %ul.more__info__list
+            %li
+              = link_to '詳細', "/articles/#{@article.id}", method: :get
+            - if user_signed_in? && current_user.id == @article.user_id
+              %li
+                = link_to '編集', "/articles/#{@article.id}/edit", method: :get
+              %li
+                = link_to '削除', "/articles/#{@article.id}", method: :delete
+  .content__comments
+    - if current_user
+      = form_with(model: [@article, @comment], local: true, class: "new") do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "2", class: "new__text"
+        = form.submit "SEND", class: "new__buttan"
+    - else
+      %span
+        ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+    .show
+      %span.show__title
+        <コメント一覧>
+      .show__comments
+        - if @comments
+          - @comments.each do |comment|
+            .box
+              .box__name
+                = link_to comment.user.name, "/users/#{comment.user_id}"
+              .box__text
+                = comment.text
+            
+            
+

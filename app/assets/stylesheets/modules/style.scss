@@ -8,6 +8,8 @@ a {
   background-color: pink;
   padding: 10px;
   border-bottom: solid 5px red;
+  position: fixed;
+  z-index: 1;
   &__bar {
     margin: 0 50px;
     display: flex;
@@ -38,4 +40,8 @@ a {
       }
     }
   }
+}
+
+.main {
+  padding-top: 95px;
 }

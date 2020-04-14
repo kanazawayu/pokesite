@@ -1,3 +1,152 @@
-.contents {
-  font-size: 50px;
+.content {
+  h4 {
+    font-size: 40px;
+    border-bottom: solid 3px crimson;
+  }
+  &__post {
+    padding: 10px;
+    &__name {
+      position: absolute;
+    }
+    &__text {
+      height: 250px;
+      padding: 10px 0 0 20px;
+      margin-bottom: 20px;
+      border: solid 2px blue;
+      display: flex;
+      position: relative;
+      .more {
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: 30px;
+        &__info {
+          &__list {
+            position: relative;
+            padding: 0;
+            list-style-type: none;
+            overflow: visible;
+          }
+          &__list li {
+            padding: 0.5em 0.5em 0.6em 0.5em;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            vertical-align: middle;
+            background: #f1c6c6;
+            border-radius: 20px 0px 0px 20px;
+            color: #ffffff;
+          }
+          &__list li::before {
+            display:inline-block;
+            vertical-align: middle;
+            content:'';
+            margin-right: 8px;
+            width:1em;
+            height: 1em;
+            background: #fff;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  &__comments {
+    padding: 30px;
+    margin: 10px;
+    border: solid 3px lightblue;
+    .new {
+      &__text {
+        height: 80px;
+        width: 100%;
+      }
+      &__buttan {
+        margin-top: 20px;
+        height: 40px;
+        width: 100%;
+        background-color: coral;
+        border-radius: 12px;
+      }
+    }
+    .show {
+      padding-top: 40px;
+      font-weight: bold;
+      &__comments {
+        margin-top: 20px;
+        .box {
+          padding: 8px 0;
+          display: flex;
+          &__name {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form {
+  background-color: lightgray;
+  padding: 20px 10vw;
+  &__content {
+    background-color: white;
+    border: solid 3px lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 80px;
+    h2 {
+      color: crimson;
+      font-size: 30px;
+      text-align: center;
+    }
+    input {
+      width: 70vw;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    &__body {
+      width: 70vw;
+      text-align: center;
+    }
+    &__buttan {
+      width: 100%;
+      background-color: coral;
+      padding-left: 49%;
+      margin: auto;
+      border-radius: 12px;
+    }
+  }
+}
+
+.create {
+  h3 {
+    font-size: 30px;
+  }
+  &__buttan {
+    font-size: 30px;
+  }
+}
+
+.destroy {
+  h5 {
+    font-size: 30px;
+  }
+  &__buttan {
+    font-size: 30px;
+  }
+}
+
+.update {
+  h6 {
+    font-size: 30px;
+  }
+  &__buttan {
+    font-size: 30px;
+  }
+}
+
+.show {
+  padding: 10px;
 }

@@ -1,9 +1,27 @@
 -# = form_with url: "#", local: true
 -# 　　サーチフィールダ
-.contents
-  - @articles.each do |article|
-    .contents__post
-      %p.content__post__text
-        = article.title
+.content
+  %h4
+    投稿一覧
+  .content__post
+    - @articles.each do |article|
+      タイトル：
+      = article.title
+      製作者：
+      %span.index__post__name
+        = link_to "#{article.user.name}", "#"
+      .content__post__text
+        = simple_format(article.body)
+        .more
+          .more__info
+            = image_tag 'arrow_top.png'
+            %ul.more__info__list
+              %li
+                = link_to '詳細', "/articles/#{article.id}", method: :get
+              - if user_signed_in? && current_user.id == article.user_id
+                %li
+                  = link_to '編集', "/articles/#{article.id}/edit", method: :get
+                %li
+                  = link_to '削除', "/articles/#{article.id}", method: :delete
   -# = paginate(@articles)
       
