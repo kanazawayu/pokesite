@@ -1,0 +1,18 @@
+タイトル：
+= article.title
+製作者：
+%span.index__post__name
+  = link_to "#{article.user.name}", "/users/#{article.user_id}"
+.content__post__text
+  = simple_format(article.body)
+  .more
+    .more__info
+      = image_tag 'arrow_top.png'
+      %ul.more__info__list
+        %li
+          = link_to '詳細', "/articles/#{article.id}", method: :get
+        - if user_signed_in? && current_user.id == article.user_id
+          %li
+            = link_to '編集', "/articles/#{article.id}/edit", method: :get
+          %li
+            = link_to '削除', "/articles/#{article.id}", method: :delete

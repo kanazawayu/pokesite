@@ -4,9 +4,7 @@
     = form.submit "検索", class: "search__form__btn"
 .content
   %h4
-    投稿一覧
+    検索結果一覧
   .content__post
     - @articles.each do |article|
-      = render partial: "article", locals: { article: article }
-  = paginate(@articles)
-      
+      = render partial: "articles/article", locals: { article: article }

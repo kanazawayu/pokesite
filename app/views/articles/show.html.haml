@@ -1,10 +1,12 @@
 .content
+  %h4
+    記事詳細ページ
   .content__post
     タイトル：
     = @article.title
     製作者：
     %span.content__post__name
-      = link_to "#{@article.user.name}", "#"
+      = link_to "#{@article.user.name}", "/users/#{@article.user_id}"
     .content__post__text
       = simple_format(@article.body)
       .more

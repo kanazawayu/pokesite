@@ -3,7 +3,4 @@
     = form_with(model: @article, local: true) do |form|
       %h2
         投稿する
-      = form.text_field :title, placeholder: "記事のタイトル"
-      = form.text_field :image, placeholder: "Image URL"
-      = form.text_area :body, placeholder: "本文" , rows: "10", class: "new__form__body"
-      = form.submit "SEND", class: "form__content__buttan"
+      = render partial: "form", locals: { form: form }

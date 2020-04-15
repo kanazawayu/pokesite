@@ -2,6 +2,49 @@ a {
   text-decoration: none;
 }
 
+.regist {
+  margin: 20px;
+  padding: 15px;
+  border: solid 4px blue;
+  border-radius: 12px;
+  &__user {
+    margin: 0 auto;
+    height: 30px;
+    width: 50vw;
+    background-color: lightskyblue;
+    border: solid 1px lightskyblue;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 12px;
+    h2 {
+      font-weight: bold;
+    }
+  }
+}
+
+.field {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  &__form {
+    width: 80%;
+    border-radius: 12px;
+  }
+}
+
+.actions {
+  text-align: center;
+  font-weight: bold;
+  &__btn {
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 30px;
+    background-color: rgb(105, 160, 243);
+  }
+}
+
 .header {
   height: 70px;
   width: 100%;
@@ -15,8 +58,10 @@ a {
     display: flex;
     justify-content: space-between;
     line-height: 70px;
+    font-weight: bold;
     &__title {
       font-size: 30px;
+      font-weight: bold;
     }
     .user {
       display: flex;

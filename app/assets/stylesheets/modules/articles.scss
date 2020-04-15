@@ -1,6 +1,8 @@
 .content {
   h4 {
     font-size: 40px;
+    font-weight: bold;
+    border-top: solid 3px crimson;
     border-bottom: solid 3px crimson;
   }
   &__post {
@@ -68,7 +70,7 @@
       }
     }
     .show {
-      padding-top: 40px;
+      padding: 50px 10px 10px 10px;
       font-weight: bold;
       &__comments {
         margin-top: 20px;
@@ -106,10 +108,6 @@
       margin-bottom: 10px;
       text-align: center;
     }
-    &__body {
-      width: 70vw;
-      text-align: center;
-    }
     &__buttan {
       width: 100%;
       background-color: coral;
@@ -120,7 +118,7 @@
   }
 }
 
-.create {
+.result {
   h3 {
     font-size: 30px;
   }
@@ -129,24 +127,22 @@
   }
 }
 
-.destroy {
-  h5 {
-    font-size: 30px;
+.search {
+  margin: 20px;
+  padding-left: 40%;
+  &__form {
+    &__input {
+      height: 40px;
+      width: 20vw;
+      text-align: center;
+      border-radius: 24px;
+    }
+    &__btn {
+      color: gray;
+      height: 40px;
+      width: 60px;
+      background-color: lightskyblue;
+      border-radius: 24px;
+    }
   }
-  &__buttan {
-    font-size: 30px;
-  }
-}
-
-.update {
-  h6 {
-    font-size: 30px;
-  }
-  &__buttan {
-    font-size: 30px;
-  }
-}
-
-.show {
-  padding: 10px;
 }
