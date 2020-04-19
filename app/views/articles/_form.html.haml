@@ -1,4 +1,3 @@
 = form.text_field :title, placeholder: "記事のタイトル"
-= form.text_field :image, placeholder: "Image URL"
-= form.text_area :body, placeholder: "本文" , rows: "10", class: "new__form__body"
+= form.text_area :body, rows: 10, placeholder: "本文", id: "limit"
 = form.submit "SEND", class: "form__content__buttan"

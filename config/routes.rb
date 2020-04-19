@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: :create
   end
+  resources :damages, only: :index
   resources :users, only: :show
 end

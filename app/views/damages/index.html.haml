@@ -1,0 +1,479 @@
+.damage  
+  .attack
+    .attack__title
+      攻撃側ステータス
+    .attack__calc
+      .attack__calc__value
+        %span
+          HP:  
+        %span
+          種族値
+        %input{id: 'hrv',type: 'number', oninput: 'hcalc()'}
+        %span
+          個体値
+        %input{id: 'hiv',type: 'number', oninput: 'hcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'hev',type: 'number', oninput: 'hcalc()'}
+      .attack__calc__result
+        %span
+          実数値:
+        %span#hresult
+          ー
+    .attack__calc
+      .attack__calc__value
+        %span
+          こうげき:
+        %span
+          種族値
+        %input{id: 'arv',type: 'number', oninput: 'acalc()'}
+        %span
+          個体値
+        %input{id: 'aiv',type: 'number', oninput: 'acalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'aev',type: 'number', oninput: 'acalc()'}
+        %span
+          性格補正
+        %select{id: 'anc', oninput: 'acalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .attack__calc__result
+        %span
+          実数値:
+        %span#aresult
+          ーーー
+    .attack__calc
+      .attack__calc__value
+        %span
+          ぼうぎょ:
+        %span
+          種族値
+        %input{id: 'brv',type: 'number', oninput: 'bcalc()'}
+        %span
+          個体値
+        %input{id: 'biv',type: 'number', oninput: 'bcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'bev',type: 'number', oninput: 'bcalc()'}
+        %span
+          性格補正
+        %select{id: 'bnc', oninput: 'bcalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .attack__calc__result
+        %span
+          実数値:
+        %span#bresult
+          ーーー
+    .attack__calc
+      .attack__calc__value
+        %span
+          とくこう:
+        %span
+          種族値
+        %input{id: 'crv',type: 'number', oninput: 'ccalc()'}
+        %span
+          個体値
+        %input{id: 'civ',type: 'number', oninput: 'ccalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'cev',type: 'number', oninput: 'ccalc()'}
+        %span
+          性格補正
+        %select{id: 'cnc', oninput: 'ccalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .attack__calc__result
+        %span
+          実数値:
+        %span#cresult
+          ーーー
+    .attack__calc
+      .attack__calc__value
+        %span
+          とくぼう:
+        %span
+          種族値
+        %input{id: 'drv',type: 'number', oninput: 'dcalc()'}
+        %span
+          個体値
+        %input{id: 'div',type: 'number', oninput: 'dcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'dev',type: 'number', oninput: 'dcalc()'}
+        %span
+          性格補正
+        %select{id: 'dnc', oninput: 'dcalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .attack__calc__result
+        %span
+          実数値:
+        %span#dresult
+          ーーー
+    .attack__calc
+      .attack__calc__value
+        %span
+          すばやさ:
+        %span
+          種族値
+        %input{id: 'srv',type: 'number', oninput: 'scalc()'}
+        %span
+          個体値
+        %input{id: 'siv',type: 'number', oninput: 'scalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'sev',type: 'number', oninput: 'scalc()'}
+        %span
+          性格補正
+        %select{id: 'snc', oninput: 'scalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .attack__calc__result
+        %span
+          実数値:
+        %span#sresult
+          ーーー
+  .defence
+    .defence__title
+      防御側ステータス
+    .defence__calc
+      .defence__calc__value
+        %span
+          HP:  
+        %span
+          種族値
+        %input{id: 'ehrv',type: 'number', oninput: 'ehcalc()'}
+        %span
+          個体値
+        %input{id: 'ehiv',type: 'number', oninput: 'ehcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'ehev',type: 'number', oninput: 'ehcalc()'}
+      .defence__calc__result
+        %span
+          実数値:
+        %span#ehresult
+          ーーー
+    .defence__calc
+      .defence__calc__value
+        %span
+          こうげき:
+        %span
+          種族値
+        %input{id: 'earv',type: 'number', oninput: 'eacalc()'}
+        %span
+          個体値
+        %input{id: 'eaiv',type: 'number', oninput: 'eacalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'eaev',type: 'number', oninput: 'eacalc()'}
+        %span
+          性格補正
+        %select{id: 'eanc', oninput: 'eacalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .defence__calc__result
+        %span
+          実数値:
+        %span#earesult
+          ーーー
+    .defence__calc
+      .defence__calc__value
+        %span
+          ぼうぎょ:
+        %span
+          種族値
+        %input{id: 'ebrv',type: 'number', oninput: 'ebcalc()'}
+        %span
+          個体値
+        %input{id: 'ebiv',type: 'number', oninput: 'ebcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'ebev',type: 'number', oninput: 'ebcalc()'}
+        %span
+          性格補正
+        %select{id: 'ebnc', oninput: 'ebcalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .defence__calc__result
+        %span
+          実数値:
+        %span#ebresult
+          ーーー
+    .defence__calc
+      .defence__calc__value
+        %span
+          とくこう:
+        %span
+          種族値
+        %input{id: 'ecrv',type: 'number', oninput: 'eccalc()'}
+        %span
+          個体値
+        %input{id: 'eciv',type: 'number', oninput: 'eccalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'ecev',type: 'number', oninput: 'eccalc()'}
+        %span
+          性格補正
+        %select{id: 'ecnc', oninput: 'eccalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .defence__calc__result
+        %span
+          実数値:
+        %span#ecresult
+          ーーー
+    .defence__calc
+      .defence__calc__value
+        %span
+          とくぼう:
+        %span
+          種族値
+        %input{id: 'edrv',type: 'number', oninput: 'edcalc()'}
+        %span
+          個体値
+        %input{id: 'ediv',type: 'number', oninput: 'edcalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'edev',type: 'number', oninput: 'edcalc()'}
+        %span
+          性格補正
+        %select{id: 'ednc', oninput: 'edcalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .defence__calc__result
+        %span
+          実数値:
+        %span#edresult
+          ーーー
+    .defence__calc
+      .defence__calc__value
+        %span
+          すばやさ:
+        %span
+          種族値
+        %input{id: 'esrv',type: 'number', oninput: 'escalc()'}
+        %span
+          個体値
+        %input{id: 'esiv',type: 'number', oninput: 'escalc()', value: '31'}
+        %span
+          努力値
+        %input{id: 'esev',type: 'number', oninput: 'escalc()'}
+        %span
+          性格補正
+        %select{id: 'esnc', oninput: 'escalc()'}
+          %option{value: '1.1'}
+            上昇
+          %option{value: '1', selected: 'selected'}
+            なし
+          %option{value: '0.9'}
+            下降
+      .defence__calc__result
+        %span
+          実数値:
+        %span#esresult
+          ーーー
+.result
+  .result__title
+    ダメージ計算
+  .result__calc
+    .result__calc__my
+      %span
+        自分のこうげき:
+      %span#myares
+        ーーー
+      %span
+        自分のとくこう:
+      %span#mycres
+        ーーー
+    .result__calc__your
+      %span
+        相手のHP:
+      %span#youhres
+        ーーー
+      %span
+        相手のぼうぎょ:
+      %span#youbres
+        ーーー
+      %span
+        相手のとくぼう:
+      %span#youdres
+        ーーー
+    .result__calc__tec
+      %span
+        わざ
+      %span
+        ぶんるい
+      %select{id: 'aorc', oninput: 'damageclac()'}
+        %option{value: '0'}
+          物理
+        %option{value: '1'}
+          特殊
+      %span
+        いりょく
+      %input{id: 'power',type: 'number', oninput: 'damageclac()'}
+      %span
+        タイプ一致補正
+      %select{id: 'match', oninput: 'damageclac()'}
+        %option{value: '1.5'}
+          あり
+        %option{value: '1'}
+          なし
+      %span
+        タイプ相性
+      %select{id: 'comp', oninput: 'damageclac()'}
+        %option{value: '4'}
+          ばつぐん(4倍)
+        %option{value: '2'}
+          ばつぐん(2倍)
+        %option{value: '1', selected: 'selected'}
+          等倍
+        %option{value: '0.5'}
+          いまひとつ(1/2)
+        %option{value: '0.25'}
+          いまひとつ(1/4)
+        %option{value: '0'}
+          こうかがない
+    .result__calc__env
+      %span
+        天候補正(攻撃側)
+      %select{id: 'myweat', oninput: 'damageclac()'}
+        %option{value: '1.5'}
+          あり(1.5倍)
+        %option{value: '1', selected: 'selected'}
+          なし
+      %span
+        フィールド補正(攻撃側)
+      %select{id: 'myfield', oninput: 'damageclac()'}
+        %option{value: '1.3'}
+          あり(1.3倍)
+        %option{value: '1', selected: 'selected'}
+          なし
+      %span
+        天候補正(防御側)
+      %select{id: 'youweat', oninput: 'damageclac()'}
+        %option{value: '0.5'}
+          あり(0.5倍)
+        %option{value: '1', selected: 'selected'}
+          なし
+      %span
+        フィールド補正(防御側)
+      %select{id: 'youfield', oninput: 'damageclac()'}
+        %option{value: '0.5'}
+          あり(0.5倍)
+        %option{value: '1', selected: 'selected'}
+          なし
+    .result__calc__stats
+      %span
+        攻撃側状態
+      %select{id: 'mystats', oninput: 'damageclac()'}
+        %option{value: '1'}
+          なし
+        %option{value: '0.5'}
+          やけど
+      %span
+        防御側状態
+      %select{id: 'youstats', oninput: 'damageclac()'}
+        %option{value: '1'}
+          なし
+        %option{value: '0.5'}
+          壁
+      %span
+        防御側ダイマックス
+      %select{id: 'youdaimax', oninput: 'damageclac()'}
+        %option{value: '1'}
+          なし
+        %option{value: '2'}
+          ダイマックス
+    .result__calc__tool
+      %span
+        攻撃側持ち物
+      %select{id: 'mytool', oninput: 'damageclac()'}
+        %option{value: '1'}
+          アイテムなし
+        %option{value: '1.3'}
+          いのちのたま
+        %option{value: '1.5'}
+          こだわり系アイテム
+        %option{value: '1.2'}
+          タイプ強化系
+        %option{value: '1.2'}
+          たつじんのおび(ばつぐんの時)
+        %option{value: '1.1'}
+          ちからのはちまき
+        %option{value: '1.1'}
+          ものしりめがね
+      %span
+        防御側持ち物
+      %select{id: 'youtool', oninput: 'damageclac()'}
+        %option{value: '1'}
+          アイテムなし
+        %option{value: '0.5'}
+          半減きのみ
+        %option{value: '1.5'}
+          しんかのきせき
+        %option{value: '1.5'}
+          とつげきチョッキ
+.real
+  .real__title
+    計算結果
+  .real__damage
+    %span
+      ダメージ:
+    %span{id: 'lowdamage'}
+      ーーー
+    %span
+      〜
+    %span{id: 'maxdamage'}
+      ーーー
+  .real__damage
+    %span
+      ダメージ割合
+    %span
+      (
+    %span{id: 'lowdamageper'}
+      ーーー
+    %span
+      ％〜
+    %span{id: 'maxdamageper'}
+      ーーー
+    %span
+      ％)
