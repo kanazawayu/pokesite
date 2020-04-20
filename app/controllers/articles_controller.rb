@@ -15,14 +15,14 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article.destroy
+    @article.destroy
   end
 
   def edit
   end
 
   def update
-    article.update(article_params)
+    @article.update(article_params)
   end
 
   def show
