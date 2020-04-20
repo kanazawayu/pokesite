@@ -131,11 +131,19 @@
 }
 
 .results {
+  height: 150px;
+  width: 80%;
+  margin: 200px 10%;
+  border: solid 5px lightblue;
+  border-radius: 16px;
+  background-color: lightblue;
+  text-align: center;
+  font-weight: bold;
   h3 {
-    font-size: 30px;
+    font-size: 40px;
   }
   &__buttan {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
