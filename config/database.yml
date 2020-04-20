@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: pokesite_production
-  username: pokesite
-  password: <%= ENV['POKESITE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
