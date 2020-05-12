@@ -1,7 +1,7 @@
 .content
   %h4
     = @name
-    さんの投稿一覧
+    さんの投稿の一覧
   .content__post
     - @articles.each do |article|
       = render partial: "articles/article", locals: { article: article }
