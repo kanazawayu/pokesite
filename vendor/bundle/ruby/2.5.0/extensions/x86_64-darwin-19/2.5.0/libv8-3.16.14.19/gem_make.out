@@ -1,0 +1,13 @@
+current directory: /Users/kanazawayu/projects/pokesite/vendor/bundle/ruby/2.5.0/gems/libv8-3.16.14.19/ext/libv8
+/Users/kanazawayu/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200513-16821-1pq0rm6.rb extconf.rb --with-system-v8
+creating Makefile
+
+current directory: /Users/kanazawayu/projects/pokesite/vendor/bundle/ruby/2.5.0/gems/libv8-3.16.14.19/ext/libv8
+make "DESTDIR=" clean
+
+current directory: /Users/kanazawayu/projects/pokesite/vendor/bundle/ruby/2.5.0/gems/libv8-3.16.14.19/ext/libv8
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/kanazawayu/projects/pokesite/vendor/bundle/ruby/2.5.0/gems/libv8-3.16.14.19/ext/libv8
+make "DESTDIR=" install
