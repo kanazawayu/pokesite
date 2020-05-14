@@ -19,7 +19,7 @@
             %ul.user__info
               %li
                 = link_to "#{current_user.name}のページ", "/users/#{current_user.id}", class: "user__buttan"
-                = link_to "ログアウトする", destroy_user_session_path, method: :delete, class: "user__buttan"
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user__buttan"
                 = link_to "投稿する", new_article_path, class: "user__buttan"
         - else
           .post
