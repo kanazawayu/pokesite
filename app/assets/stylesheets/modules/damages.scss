@@ -1,80 +1,82 @@
 input {
   width: 10%;
 }
-
-.damage {
-  padding: 5px;
-  display: flex;
-  .attack {
-    height: 100%;
-    width: 50%;
-    background-color: orange;
+.damagebox {
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke;
+  .damage {
     padding: 5px;
+    display: flex;
+    .attack {
+      height: 100%;
+      width: 50%;
+      background-color: orange;
+      padding: 5px;
+      &__title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__calc {
+        margin-top: 5px;
+        // &__value {
+
+        // }
+        // &__result {
+
+        // }
+      }
+    }
+    .defence {
+      height: 100%;
+      width: 50%;
+      background-color: lawngreen;
+      padding: 5px;
+      &__title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__calc {
+        margin-top: 5px;
+        // &__value {
+
+        // }
+        // &__result {
+
+        // }
+      }
+    }
+  }
+
+  .result {
+    width: 100%;
+    background-color: rgb(55, 110, 143);
+    margin: 5px;
     &__title {
+      height: 30px;
       font-size: 20px;
       font-weight: bold;
+      background-color: lightblue;
     }
-    &__calc {
-      margin-top: 5px;
-      &__value {
+    // &__calc {
 
-      }
-      &__result {
-
-      }
-    }
+    // }
   }
-  .defence {
-    height: 100%;
-    width: 50%;
-    background-color: lawngreen;
-    padding: 5px;
+
+  .real {
+    width: 100%;
+    background-color: rgb(201, 211, 158);
+    margin: 5px;
     &__title {
+      height: 30px;
       font-size: 20px;
       font-weight: bold;
-    }
-    &__calc {
-      margin-top: 5px;
-      &__value {
-
-      }
-      &__result {
-
-      }
+      background-color: yellow;
     }
   }
-}
 
-.result {
-  width: 100%;
-  background-color: rgb(55, 110, 143);
-  margin: 5px;
-  &__title {
-    height: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: lightblue;
+  .battle {
+    display: flex;
+    justify-content: space-around;
   }
-  &__calc {
-
-  }
-}
-
-.real {
-  width: 100%;
-  background-color: rgb(201, 211, 158);
-  margin: 5px;
-  &__title {
-    height: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: yellow;
-  }
-}
-
-.battle {
-  height: 150px;
-  width: 100%;
-  margin: 5px;
-  background-color: yellowgreen;
 }
