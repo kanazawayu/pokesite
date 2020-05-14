@@ -1,31 +1,14 @@
-# pokesite テーブル設計
-## usersテーブル
-|Column|Type|Option|
-|------|----|------|
-|email|string|null: false|
-|name|string|null: false|
-|password|string|null: false|
-### Association
-- has_many :articles
-- has_many :comments
+# アプリ概要
+---
+ゲーム『ポケットモンスター』シリーズのキャラクターの育成案を投稿するサイトです。
+プラスしてゲーム本編におけるダメージ計算機能もついています。
+本販環境のURLです ⇨ https://fierce-basin-69092.herokuapp.com/damages
+テスト用アカウント email:aaa@aaa.com  / パスワード:aaaaaaaa
 
-## articlesテーブル
-|Column|Type|Option|
-|------|----|------|
-|title|string||
-|body|text||
-|image|string||
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
+## 作成経緯
+---
+自分自身ゲームをプレイしていて数あるツールを利用する中でそれぞれ使いづらい点がある
+と感じていたので自身でその点を改修できないかと思い作成することを決めました。
 
-## commentsテーブル
-|Column|Type|Option|
-|------|----|------|
-|text|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|article_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :article
+### 開発環境
+---
