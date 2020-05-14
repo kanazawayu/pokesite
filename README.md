@@ -21,7 +21,47 @@
 
 ##### 今後追加したい機能や課題
 - 投稿機能
-  - いいね機能などより深く交流ができる機能
+  - いいね機能などより深く交流ができる機能の実装
+  - 投稿をフォーマット化して分かりやすい記事が誰でも投稿できるように。
 - 検索機能
   - チェックボックスなどを利用して直感的な操作ができるようにすること。
-- 
+  - 足りない計算条件を追加する。
+
+###### 工夫した点
+  見た目を華やかにするためにcssでポケモンのサイトらしさを出しました。
+
+###### DEMO(アプリ画面)
+  ![トップページ](https://github.com/quin001cunx/newRead/blob/master/21.48.26.png)
+  ![編集画面](https://github.com/quin001cunx/newRead/blob/master/21.48.06.png)
+  ![ダメージ計算機能](https://github.com/quin001cunx/newRead/blob/master/21.48.26.png)
+
+# pokesite テーブル設計
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|email|string|null: false|
+|name|string|null: false|
+|password|string|null: false|
+### Association
+- has_many :articles
+- has_many :comments
+
+## articlesテーブル
+|Column|Type|Option|
+|------|----|------|
+|title|string||
+|body|text||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+
+## commentsテーブル
+|Column|Type|Option|
+|------|----|------|
+|text|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|article_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :article
