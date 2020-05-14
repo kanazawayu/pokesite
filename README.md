@@ -31,7 +31,7 @@
   見た目を華やかにするためにcssでポケモンのサイトらしさを出しました。
 
 ## DEMO(アプリ画面)
-  ![トップページ](https://github.com/quin001cunx/newRead/blob/master/21.48.26.png)
+  ![トップページ](https://github.com/quin001cunx/newRead/blob/master/21.47.15.png)
   ![編集画面](https://github.com/quin001cunx/newRead/blob/master/21.48.06.png)
   ![ダメージ計算機能](https://github.com/quin001cunx/newRead/blob/master/21.48.26.png)
 
