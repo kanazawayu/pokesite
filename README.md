@@ -31,9 +31,9 @@
   見た目を華やかにするためにcssでポケモンのサイトらしさを出しました。
 
 ## DEMO(アプリ画面)
-  ![トップページ](https://github.com/quin001cunx/newRead/blob/master/top.png)
-  ![編集画面](https://github.com/quin001cunx/newRead/blob/master/edit.png)
-  ![ダメージ計算機能](https://github.com/quin001cunx/newRead/blob/master/damage.png)
+  ![トップページ](top.png)
+  ![編集画面](edit.png)
+  ![ダメージ計算機能](damage.png)
 
 # pokesite テーブル設計
 ## usersテーブル
