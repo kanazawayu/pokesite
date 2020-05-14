@@ -9,11 +9,18 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header.header
-      = render "layouts/monbo"
-      = render "layouts/haipa"
+      -# = render "layouts/monbo"
+      -# = render "layouts/su-pa"
+      -# = render "layouts/haipa"
+      -# = render "layouts/urutora"
+      -# = render "layouts/masuta"
+      -# = render "layouts/taima"
+      -# = render "layouts/pikatyu"
       .header__bar
         %h1.header__bar__title
-          = link_to "POKEDATA", "/"
+          = render "layouts/monbo"
+          = link_to "POKEDATA", "/" 
+          = render "layouts/haipa"
         - if user_signed_in?
           .user
             %ul.user__info

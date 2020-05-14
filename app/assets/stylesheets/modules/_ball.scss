@@ -1,27 +1,95 @@
 .monbo {
-  .aaa{
+  .ue {
     height: 25px;
     width: 50px;
     background-color: red;
     border-radius: 100px 100px 0 0;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
     position: relative;
+    .naka {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: relative;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      .mannaka {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+  }
+  .sita {
+    height: 25px;
+    width: 50px;
+    background-color: white;
+    border-radius: 0 0 100px 100px;
+  }
+}
+
+.su-pa {
+  .aaa{
+    height: 25px;
+    width: 50px;
+    background-color: rgb(12, 44, 230);
+    border-radius: 100px 100px 0 0;
+    border-bottom: 3px solid black;
+    position: relative;
+    .ccc {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      .fff {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+    .ddd {
+      height: 15px;
+      width: 10px;
+      background-color: red;
+      transform: rotate(-45deg);
+      transform-origin: top center;
+      position: absolute;
+      bottom: 3px;
+      right: 40px;
+    }
+    .eee {
+      height: 15px;
+      width: 10px;
+      background-color: red;
+      transform: rotate(45deg);
+      transform-origin: top center;
+      position: absolute;
+      bottom: 3px;
+      right: 0px;
+    }
   }
   .bbb {
     height: 25px;
     width: 50px;
     background-color: white;
     border-radius: 0 0 100px 100px;
-  }
-  .ccc {
-    height: 15px;
-    width: 15px;
-    border-radius: 100px;
-    background-color: white;
-    border: 2px solid black;
-    position: absolute;
-    bottom: -10px;
-    right: 15px;
   }
 }
 
@@ -31,8 +99,46 @@
     width: 50px;
     background-color: black;
     border-radius: 100px 100px 0 0;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
     position: relative;
+    .ccc {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      .fff {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+    .ddd {
+      height: 25px;
+      width: 10px;
+      background-color: yellow;
+      border-radius: 100px 0 0 0;
+      position: absolute;
+      bottom: 0px;
+      right: 32px;
+    }
+    .eee {
+      height: 25px;
+      width: 10px;
+      background-color: yellow;
+      border-radius: 0 100px 0 0;
+      position: absolute;
+      bottom: 0px;
+      right: 8px;
+    }
   }
   .bbb {
     height: 25px;
@@ -40,14 +146,383 @@
     background-color: white;
     border-radius: 0 0 100px 100px;
   }
-  .ccc {
-    height: 15px;
-    width: 15px;
-    border-radius: 100px;
-    background-color: white;
-    border: 2px solid black;
+}
+
+.masuta {
+  position: relative;
+  .ue {
+    height: 25px;
+    width: 50px;
+    background-color: rgb(143, 10, 219);
+    border-radius: 100px 100px 0 0;
+    border-bottom: 3px solid black;
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 6px;
+      right: 20px;
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
+    }
+    .naka {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: relative;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      .mannaka {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+  }
+  .sousyoku1 {
+    height: 20px;
+    width: 13px;
+    background-color: rgb(204, 23, 174);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    transform-origin: top center;
     position: absolute;
-    bottom: -10px;
-    right: 15px;
+    bottom: 46px;
+    right: 9px;
+  }
+  .sousyoku2 {
+    height: 20px;
+    width: 13px;
+    background-color: rgb(204, 23, 174);
+    border-radius: 50%;
+    transform: rotate(-135deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 32px;
+    right: 42px;
+  }
+  .sita {
+    height: 25px;
+    width: 50px;
+    background-color: white;
+    border-radius: 0 0 100px 100px;
+  }
+}
+
+.urutora {
+  position: relative;
+  .ue{
+    height: 25px;
+    width: 50px;
+    background-color: rgb(57, 99, 236);
+    border-radius: 100px 100px 0 0;
+    border-bottom: 3px solid rgb(113, 208, 236);
+    position: relative;
+    .naka {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      z-index: 1;
+      .mannaka {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+  }
+  .sita {
+    height: 25px;
+    width: 50px;
+    background-color: rgb(57, 99, 236);
+    border-radius: 0 0 100px 100px;
+  }
+  .tate {
+    height: 52px;
+    width: 3px;
+    background-color: rgb(113, 208, 236);
+    position: absolute;
+    bottom: 18px;
+    right: 24px;
+  }
+  .en1 {
+    height: 24px;
+    width: 24px;
+    border: 3px solid rgb(113, 208, 236);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 29px;
+    right: 10px;
+  }
+  .en2 {
+    height: 40px;
+    width: 40px;
+    border: 3px solid rgb(113, 208, 236);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 21px;
+    right: 2px;
+  }
+  .sousyoku1 {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-right: 30px solid yellow;
+    transform: rotate(-45deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 48px;
+    right: 3px;
+  }
+  .sousyoku2 {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-right: 30px solid yellow;
+    transform: rotate(45deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 32px;
+    right: -2px;
+  }
+  .sousyoku3 {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-left: 30px solid yellow;
+    transform: rotate(-45deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 32px;
+    left: -2px;
+  }
+  .sousyoku4 {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-left: 30px solid yellow;
+    transform: rotate(45deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 48px;
+    left: 3px;
+  }
+}
+
+.taima {
+  position: relative;
+  .ue {
+    height: 25px;
+    width: 50px;
+    background-color: white;
+    border-radius: 100px 100px 0 0;
+    border-bottom: 3px solid black;
+    position: relative;
+    .naka {
+      height: 16px;
+      width: 16px;
+      border-radius: 100px;
+      background-color: white;
+      border: 2px solid black;
+      position: relative;
+      position: absolute;
+      bottom: -11px;
+      right: 15px;
+      .mannaka {
+        height: 6px;
+        width: 6px;
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+      }
+    }
+  }
+  .sousyoku1 {
+    height: 10px;
+    width: 20px;
+    background-color: rgb(235, 96, 15);
+    border-radius: 0 100px 0 0;
+    transform: rotate(270deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 44px;
+    right: 40px;
+  }
+  .sousyoku2 {
+    height: 10px;
+    width: 20px;
+    background-color: rgb(235, 96, 15);
+    border-radius: 100px 0 0 0;
+    transform: rotate(90deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 44px;
+    right: -10px;
+  }
+  .sousyoku3 {
+    height: 10px;
+    width: 20px;
+    background-color: rgb(235, 96, 15);
+    border-radius: 0 100px 0 0;
+    transform: rotate(90deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 22px;
+    right: -10px;
+  }
+  .sousyoku4 {
+    height: 10px;
+    width: 20px;
+    background-color: rgb(235, 96, 15);
+    border-radius: 100px 0 0 0;
+    transform: rotate(270deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 22px;
+    right: 40px;
+  }
+  .sousyoku5 {
+    height: 26px;
+    width: 11px;
+    background-color: rgb(10, 4, 9);
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 39px;
+    right: 7px;
+  }
+  .sousyoku6 {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+    border-top: 13px solid rgb(235, 96, 15);
+    transform-origin: top center;
+    position: absolute;
+    bottom: 54px;
+    left: 20px;
+  }
+  .sita {
+    height: 25px;
+    width: 50px;
+    background-color: white;
+    border-radius: 0 0 100px 100px;
+  }
+}
+
+.pikatyu {
+  position: relative;
+  .eee {
+    height: 58px;
+    width: 58px;
+    background-color: rgb(250, 235, 101);
+    position: relative;
+    position: absolute;
+    top: 40px;
+    .eye1 {
+      height: 14px;
+      width: 12px;
+      background-color: black;
+      position: relative;
+      position: absolute;
+      top: 12px;
+      right: 9px;
+      .white {
+        height: 5px;
+        width: 5px;
+        background-color: white;
+        position: absolute;
+        top: 2px;
+        right: 5px;
+      }
+    }
+    .eye2 {
+      height: 14px;
+      width: 12px;
+      background-color: black;
+      position: relative;
+      position: absolute;
+      top: 12px;
+      right: 37px;
+      .white {
+        height: 5px;
+        width: 5px;
+        background-color: white;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+      }
+    }
+    .hoho1 {
+      height: 12px;
+      width: 12px;
+      background-color: rgb(221, 79, 36);
+      position: absolute;
+      top: 29px;
+      left: 0;
+    }
+    .hoho2 {
+      height: 12px;
+      width: 12px;
+      background-color: rgb(221, 79, 36);
+      position: absolute;
+      top: 29px;
+      right: 0;
+    }
+    .hana {
+      height: 2px;
+      width: 4px;
+      background-color: black;
+      position: absolute;
+      top: 27px;
+      right: 27px;
+    }
+    .kuti {
+      position: relative;
+      position: absolute;
+      top: 32px;
+      right: 18px;
+      display: inline-block;
+      height: 14px;
+      width: 21px;
+      background-color: #c85554;
+      .sita {
+        width: 13px;
+        height: 6px;
+        background-color: #e5abbe;
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+      }
+    }
+    .kuti:before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 20px;
+      margin-left: -15px;
+      border: 5px solid transparent;
+      border-bottom: 5px solid #c85554;
+    }
   }
 }
