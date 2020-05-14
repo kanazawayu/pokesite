@@ -61,7 +61,12 @@ a {
     font-weight: bold;
     &__title {
       font-size: 30px;
+      line-height: 60px;
       font-weight: bold;
+      display: flex;
+      a {
+        padding: 0 10px;
+      }
     }
     .user {
       display: flex;
