@@ -10,6 +10,17 @@ function hcalc(){
   $('#hresult').html(hresult);
 }
 
+$('#atype1').on("change", function() {
+  var atype1 = $('#atype1').val();
+  // var atype2 = String($('#atype2').val());
+})
+function typecalc(){
+  var atype1 = String($('#atype1').val());
+  var atype2 = String($('#atype2').val());
+  $('#mytype1').html(atype1);
+  $('#mytype2').html(atype2);
+}
+
 function acalc(){
   var arv = Number($('#arv').val());
   var aiv = Number($('#aiv').val());
@@ -77,6 +88,8 @@ function scalc(){
   $('#sresult').html(sresult);
 }
 
+// ~~~敵側ステータス~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function ehcalc(){
   var ehrv = Number($('#ehrv').val());
   var ehiv = Number($('#ehiv').val());
@@ -88,6 +101,13 @@ function ehcalc(){
   ehresult = Math.floor((ehrv+ehiv+ehev+60));
   $('#ehresult').html(ehresult);
   $('#youhres').html(ehresult);
+}
+
+function etypecalc(){
+  var etype1 = $('#etype1').val();
+  var etype2 = $('#etype2').val();
+  $('#youtype1').html(etype1);
+  $('#youtype2').html(etype2);
 }
 
 function eacalc(){
@@ -157,15 +177,13 @@ function escalc(){
   $('#esresult').html(esresult);
 }
 
-function damageclac(){
+function clickBtn1(){
   // 技の分類
   var aorc = Number($('#aorc').val());
+  // 技のタイプ
+  var tectype = $('#tectype').val();
   // 技の威力
   var power = Number($('#power').val());
-  // タイプ一致
-  var match = Number($('#match').val());
-  // タイプ相性
-  var comp =　Number($('#comp').val());
   // 天候攻撃側
   var myweat = Number($('#myweat').val());
   // フィールド攻撃側
@@ -184,6 +202,508 @@ function damageclac(){
   var mytool = Number($('#mytool').val());
   // 防御道具
   var youtool = Number($('#youtool').val());
+
+  // var mytype1 = $('#mytype1').val();
+  // var mytype2 = $('#mytype2').val();
+
+  // var select = document.getElementById('atype1');
+  // select.onchange = function(){
+  //   alert(this.value);
+  // }
+  var atype1 = $('#atype1').val();
+  var atype2 = $('#atype2').val();
+  var match = 1
+  if (tectype == atype1 || tectype == atype2) {
+    match = 1.5
+  }
+
+  var etype1 = $('#etype1').val();
+  var etype2 = $('#etype2').val();
+  var comp = 1
+  if (tectype == "ノーマル") {
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+  }else if (tectype == "かくとう") {
+    if (etype1 == "ノーマル" || etype2 == "ノーマル"){
+      comp = comp*2
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0
+    }
+  }else if (tectype == "ひこう") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "どく") {
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0
+    }
+  }else if (tectype == "じめん") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0
+    }
+  }else if (tectype == "いわ") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "むし") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ゴースト") {
+    if (etype1 == "ノーマル" || etype2 == "ノーマル"){
+      comp = comp*0
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "はがね") {
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ほのお") {
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "みず") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "くさ") {
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "でんき") {
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0
+    }
+  }else if (tectype == "エスパー") {
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0
+    }
+  }else if (tectype == "こおり") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ドラゴン") {
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0
+    }
+  }else if (tectype == "あく") {
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "フェアリー") {
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }
+ 
+
   if (aorc == 0){
     var power = Math.round(power*myfield);
     var power = Math.round(power*youfield);
