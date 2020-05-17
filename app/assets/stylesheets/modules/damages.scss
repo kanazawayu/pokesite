@@ -105,6 +105,7 @@ input {
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 2;
   .real {
     height: 550px;
     width: 600px;
@@ -121,6 +122,39 @@ input {
       padding: 20px 10px;
       span {
         font-size: 20px;
+      }
+      .block {
+        display: flex;
+        .bar {
+          width: 300px;
+          border: 1px solid #207870;
+          padding: 2px;
+          margin-left: 40px;
+          display: flex;
+          .per {
+            display: block;
+            position: relative;
+            background: #409890;
+            text-align: center;
+            color: #f0ffff;
+            height: 2em;
+            line-height: 2em;
+            z-index: 1;
+          }
+          .maxper {
+            display: block;
+            position: relative;
+            background: #16914d;
+            text-align: center;
+            color: #f0ffff;
+            height: 2em;
+            line-height: 2em;
+          }
+          span {
+            position: absolute;
+            left: 0;
+          }
+        }
       }
     }
     &__buttan {

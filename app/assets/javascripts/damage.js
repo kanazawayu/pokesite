@@ -180,14 +180,6 @@ function clickBtn1(){
   var tectype = $('#tectype').val();
   // 技の威力
   var power = Number($('#power').val());
-  // // 天候攻撃側
-  // var myweat = Number($('#myweat').val());
-  // フィールド攻撃側
-  var myfield = Number($('#myfield').val());
-  // // 天候防御
-  // var youweat = Number($('#youweat').val());
-  // 不xーるど防御
-  var youfield = Number($('#youfield').val());
   // こうげき状態
   var mystats = Number($('#mystats').val());
   //防御状態
@@ -855,8 +847,34 @@ function clickBtn1(){
       edresult = edresult/3*2
     }
   }
+  var damagecalc = maxdamageper - lowdamageper
+  var exdamagecalc = exmaxdamageper - exlowdamageper
+
+  if (lowdamageper > 100) {
+    $('#damagebar').append(`<span class="per" style="width: 100%;">確定1発！</span>`)
+
+  }else if (maxdamageper > 100 && lowdamageper <= 100) {
+    $('#damagebar').append(`<span class="per" style="width: 100%;">乱数1発！</span>`)
+
+  }else if (lowdamageper <= 100) {
+    $('#damagebar').append(`<span class="per" style="width: ${lowdamageper}%;">${lowdamageper}%</span>
+                            <span class="maxper" style="width: ${damagecalc}%;"></span>`)
+  }
+
+  if (exlowdamageper > 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: 100%;">確定1発！</span>`)
+
+  }else if (exmaxdamageper > 100 && exlowdamageper <= 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: 100%;">乱数1発！</span>`)
+
+  }else if (exlowdamageper <= 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: ${exlowdamageper}%;">${exlowdamageper}%</span>
+                            <span class="maxper" style="width: ${exdamagecalc}%;"></span>`)
+  }
 }
 
 function clickBtn2() {
   $('.popup').toggleClass('active');
+  $('#damagebar').children().remove();
+  $('#exdamagebar').children().remove();
 }

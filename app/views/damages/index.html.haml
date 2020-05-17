@@ -696,30 +696,34 @@
     .real__damage
       %span
         ダメージ割合
-      .display
-        %span
-          (
-        %span{id: 'lowdamageper'}
-          ーーー
-        %span
-          ％〜
-        %span{id: 'maxdamageper'}
-          ーーー
-        %span
-          ％)
+      .block
+        .display
+          %span
+            (
+          %span{id: 'lowdamageper'}
+            ーーー
+          %span
+            ％〜
+          %span{id: 'maxdamageper'}
+            ーーー
+          %span
+            ％)
+        .bar#damagebar
     .real__damage
       %span
         急所時ダメージ割合:
-      .display
-        %span
-          (
-        %span{id: 'exlowdamageper'}
-          ーーー
-        %span
-          ％〜
-        %span{id: 'exmaxdamageper'}
-          ーーー
-        %span
-          ％)
+      .block
+        .display
+          %span
+            (
+          %span{id: 'exlowdamageper'}
+            ーーー
+          %span
+            ％〜
+          %span{id: 'exmaxdamageper'}
+            ーーー
+          %span
+            ％)
+        .bar#exdamagebar
     .real__buttan
       %input{type: "button", value: "閉じる", onclick: "clickBtn2()"}
