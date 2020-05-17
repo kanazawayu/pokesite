@@ -6,7 +6,7 @@
       .attack__type
         %span
           タイプ１
-        %select{id: 'atype1'}
+        %select{id: 'atype1', oninput: 'typecalc()'}
           %option{value: '---'}
             ーーー
           %option{value: 'ノーマル'}
@@ -576,24 +576,23 @@
             フェアリー
       .result__calc__env
         %span
-          天候補正(攻撃側)
-        %select{id: 'myweat'}
-          %option{value: '1.5'}
-            あり(1.5倍)
-          %option{value: '1', selected: 'selected'}
+          天候補正
+        %form{id: 'weat'}
+          %input{type: 'radio', name: 'weatname', value: "---", checked: "checked"}
             なし
+          %input{type: 'radio', name: 'weatname', value: "あめ"}
+            あめ
+          %input{type: 'radio', name: 'weatname', value: "はれ"}
+            はれ
+          %input{type: 'radio', name: 'weatname', value: "すな"}
+            すな
+          %input{type: 'radio', name: 'weatname', value: "あられ"}
+            あられ
         %span
           フィールド補正(攻撃側)
         %select{id: 'myfield'}
           %option{value: '1.3'}
             あり(1.3倍)
-          %option{value: '1', selected: 'selected'}
-            なし
-        %span
-          天候補正(防御側)
-        %select{id: 'youweat'}
-          %option{value: '0.5'}
-            あり(0.5倍)
           %option{value: '1', selected: 'selected'}
             なし
         %span

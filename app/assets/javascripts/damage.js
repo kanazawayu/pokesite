@@ -10,10 +10,6 @@ function hcalc(){
   $('#hresult').html(hresult);
 }
 
-$('#atype1').on("change", function() {
-  var atype1 = $('#atype1').val();
-  // var atype2 = String($('#atype2').val());
-})
 function typecalc(){
   var atype1 = String($('#atype1').val());
   var atype2 = String($('#atype2').val());
@@ -184,12 +180,12 @@ function clickBtn1(){
   var tectype = $('#tectype').val();
   // 技の威力
   var power = Number($('#power').val());
-  // 天候攻撃側
-  var myweat = Number($('#myweat').val());
+  // // 天候攻撃側
+  // var myweat = Number($('#myweat').val());
   // フィールド攻撃側
   var myfield = Number($('#myfield').val());
-  // 天候防御
-  var youweat = Number($('#youweat').val());
+  // // 天候防御
+  // var youweat = Number($('#youweat').val());
   // 不xーるど防御
   var youfield = Number($('#youfield').val());
   // こうげき状態
@@ -203,20 +199,14 @@ function clickBtn1(){
   // 防御道具
   var youtool = Number($('#youtool').val());
 
-  // var mytype1 = $('#mytype1').val();
-  // var mytype2 = $('#mytype2').val();
-
-  // var select = document.getElementById('atype1');
-  // select.onchange = function(){
-  //   alert(this.value);
-  // }
+// タイプ一致の計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   var atype1 = $('#atype1').val();
   var atype2 = $('#atype2').val();
   var match = 1
   if (tectype == atype1 || tectype == atype2) {
     match = 1.5
   }
-
+// 弱点の計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   var etype1 = $('#etype1').val();
   var etype2 = $('#etype2').val();
   var comp = 1
@@ -702,15 +692,41 @@ function clickBtn1(){
       comp = comp*0.5
     }
   }
- 
+
+  var w = document.getElementById( "weat" ) ;
+  var radioNodeList = w.weatname ;
+  var weat = radioNodeList.value ;
+  var weatmag = 1
+  if (weat == "---") {
+
+  }else if (weat == "あめ") {
+    if (tectype == "ほのお") {
+      weatmag = weatmag*0.5
+    }else if (tectype == "みず") {
+      weatmag = weatmag*1.5
+    }
+
+  }else if (weat == "はれ") {
+    if (tectype == "ほのお") {
+      weatmag = weatmag*1.5
+    }else if (tectype == "みず") {
+      weatmag = weatmag*0.5
+    }
+
+  }else if (weat == "すな") {
+    if (etype1 == "いわ" || etype2 == "いわ") {
+      edresult = edresult*1.5
+    }
+  }else if (weat == "あられ") {
+
+  }
 
   if (aorc == 0){
-    var power = Math.round(power*myfield);
-    var power = Math.round(power*youfield);
+    // var power = Math.round(power*myfield);
+    // var power = Math.round(power*youfield);
     var maxdamage = Math.floor(22*power*aresult/ebresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
-    var maxdamage = Math.ceil(maxdamage*youweat-0.5);
-    var maxdamage = Math.ceil(maxdamage*myweat-0.5);
+    var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
@@ -725,12 +741,11 @@ function clickBtn1(){
     var maxdamage = Math.ceil(maxdamage*youtool-0.5);
     var lowdamage = Math.ceil(lowdamage*youtool-0.5);
   }else{
-    var power = Math.round(power*myfield);
-    var power = Math.round(power*youfield);
+    // var power = Math.round(power*myfield);
+    // var power = Math.round(power*youfield);
     var maxdamage = Math.floor(22*power*cresult/edresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
-    var maxdamage = Math.ceil(maxdamage*youweat-0.5);
-    var maxdamage = Math.ceil(maxdamage*myweat-0.5);
+    var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
@@ -755,4 +770,10 @@ function clickBtn1(){
   $('#maxdamage').html(maxdamage);
   $('#lowdamageper').html(lowdamageper);
   $('#maxdamageper').html(maxdamageper);
+
+  if (weat == "すな") {
+    if (etype1 == "いわ" || etype2 == "いわ") {
+      edresult = edresult/3*2
+    }
+  }
 }
