@@ -693,6 +693,7 @@ function clickBtn1(){
     }
   }
 
+// 天候補正計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   var w = document.getElementById( "weat" ) ;
   var radioNodeList = w.weatname ;
   var weat = radioNodeList.value ;
@@ -721,59 +722,141 @@ function clickBtn1(){
 
   }
 
+// フィールド補正~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var f = document.getElementById( "field" ) ;
+  var radioNodeList = f.fieldname ;
+  var field = radioNodeList.value ;
+  var fieldmag = 1
+  if (field == "---") {
+
+  }else if (field == "エレキ") {
+    if (tectype == "でんき") {
+      fieldmag = fieldmag*1.3
+    }
+
+  }else if (field == "グラス") {
+    if (tectype == "くさ") {
+      fieldmag = fieldmag*1.3
+    }
+
+  }else if (field == "サイコ") {
+    if (tectype == "エスパー") {
+      fieldmag = fieldmag*1.3
+    }
+  }else if (field == "ミスト") {
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン") {
+      fieldmag = fieldmag*0.5
+    }
+  }
+
   if (aorc == 0){
-    // var power = Math.round(power*myfield);
-    // var power = Math.round(power*youfield);
+    var power = Math.round(power*fieldmag);
     var maxdamage = Math.floor(22*power*aresult/ebresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
     var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
+    var exmaxdamage = Math.ceil(maxdamage*1.5-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
+    var exlowdamage = Math.floor(exmaxdamage*0.85);
+
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*match-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*match-0.5);
+
     var maxdamage = Math.floor(maxdamage*comp);
     var lowdamage = Math.floor(lowdamage*comp);
+    var exmaxdamage = Math.floor(exmaxdamage*comp);
+    var exlowdamage = Math.floor(exlowdamage*comp);
+
     var maxdamage = Math.ceil(maxdamage*mystats-0.5);
     var lowdamage = Math.ceil(lowdamage*mystats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mystats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mystats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youstats-0.5);
     var lowdamage = Math.ceil(lowdamage*youstats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youstats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youstats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*mytool-0.5);
     var lowdamage = Math.ceil(lowdamage*mytool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mytool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mytool-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youtool-0.5);
     var lowdamage = Math.ceil(lowdamage*youtool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youtool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youtool-0.5);
+
   }else{
-    // var power = Math.round(power*myfield);
-    // var power = Math.round(power*youfield);
+    var power = Math.round(power*fieldmag);
     var maxdamage = Math.floor(22*power*cresult/edresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
     var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
+    var exmaxdamage = Math.ceil(maxdamage*1.5-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
+    var exlowdamage = Math.floor(exmaxdamage*0.85);
+
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*match-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*match-0.5);
+
     var maxdamage = Math.floor(maxdamage*comp);
     var lowdamage = Math.floor(lowdamage*comp);
+    var exmaxdamage = Math.floor(exmaxdamage*comp);
+    var exlowdamage = Math.floor(exlowdamage*comp);
+
     var maxdamage = Math.ceil(maxdamage*mystats-0.5);
     var lowdamage = Math.ceil(lowdamage*mystats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mystats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mystats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youstats-0.5);
     var lowdamage = Math.ceil(lowdamage*youstats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youstats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youstats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*mytool-0.5);
     var lowdamage = Math.ceil(lowdamage*mytool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mytool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mytool-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youtool-0.5);
     var lowdamage = Math.ceil(lowdamage*youtool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youtool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youtool-0.5);
   }
   var hres = Math.floor(ehresult*youdaimax);
   var maxdamageper = Math.round(maxdamage/hres*1000);
   var lowdamageper = Math.round(lowdamage/hres*1000);
+  var exmaxdamageper = Math.round(exmaxdamage/hres*1000);
+  var exlowdamageper = Math.round(exlowdamage/hres*1000);
+
   var maxdamageper = maxdamageper/10
   var lowdamageper = lowdamageper/10
+  var exmaxdamageper = exmaxdamageper/10
+  var exlowdamageper = exlowdamageper/10
+
+  $('.popup').toggleClass('active');
 
   $('#lowdamage').html(lowdamage);
   $('#maxdamage').html(maxdamage);
+  $('#exlowdamage').html(exlowdamage);
+  $('#exmaxdamage').html(exmaxdamage);
+
   $('#lowdamageper').html(lowdamageper);
   $('#maxdamageper').html(maxdamageper);
+  $('#exlowdamageper').html(exlowdamageper);
+  $('#exmaxdamageper').html(exmaxdamageper);
 
   if (weat == "すな") {
     if (etype1 == "いわ" || etype2 == "いわ") {
       edresult = edresult/3*2
     }
   }
+}
+
+function clickBtn2() {
+  $('.popup').toggleClass('active');
 }
