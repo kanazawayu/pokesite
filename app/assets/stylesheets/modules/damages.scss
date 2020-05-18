@@ -103,7 +103,7 @@ input {
   background: rgba(0, 0, 0, 0.6);
   opacity: 1;
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
   z-index: 2;
   .real {
@@ -186,11 +186,29 @@ input {
 
 @keyframes show {
   0% {
-    transform: scale(0.5) rotate(0deg);
+    bottom: 1000px;
+    // transform: scale(0.5) rotate(0deg);
+  }
+
+  40% {
+    bottom: 0px;
+  }
+
+  60% {
+    bottom: 120px;
+  }
+
+  80% {
+    bottom: 0px;
+  }
+
+  90% {
+    bottom: 5px;
   }
 
   100% {
-    transform: scale(1) rotate(720deg);
+    bottom: 0px;
+    // transform: scale(1) rotate(720deg);
   }
 }
 
