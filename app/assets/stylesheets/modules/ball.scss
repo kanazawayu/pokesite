@@ -22,6 +22,53 @@
   }
 }
 
+@keyframes roll1 {
+  0% {
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+
+  13% {
+    margin-left: 150px;
+    transform: rotate(360deg);
+  }
+
+  25% {
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+
+  38% {
+    margin-left: -150px;
+    transform: rotate(-360deg);
+  }
+
+  50% {
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+
+  63% {
+    margin-left: 150px;
+    transform: rotate(360deg);
+  }
+
+  75% {
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+
+  88% {
+    margin-left: -150px;
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+}
+
 .monbo {
   animation: ball 2s ease 0s infinite alternate none running;
   .ue {
@@ -62,6 +109,7 @@
 }
 
 .su-pa {
+  animation: roll1 10s ease 0s infinite normal none running;
   .aaa{
     height: 25px;
     width: 50px;
@@ -244,6 +292,7 @@
 }
 
 .urutora {
+  animation: roll1 10s ease 0s infinite normal none running;
   position: relative;
   .ue{
     height: 25px;
@@ -353,6 +402,7 @@
 }
 
 .taima {
+  animation: roll1 10s ease 0s infinite normal none running;
   position: relative;
   .ue {
     height: 25px;
