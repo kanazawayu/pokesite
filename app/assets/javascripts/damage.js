@@ -10,6 +10,13 @@ function hcalc(){
   $('#hresult').html(hresult);
 }
 
+function typecalc(){
+  var atype1 = String($('#atype1').val());
+  var atype2 = String($('#atype2').val());
+  $('#mytype1').html(atype1);
+  $('#mytype2').html(atype2);
+}
+
 function acalc(){
   var arv = Number($('#arv').val());
   var aiv = Number($('#aiv').val());
@@ -77,6 +84,8 @@ function scalc(){
   $('#sresult').html(sresult);
 }
 
+// ~~~敵側ステータス~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function ehcalc(){
   var ehrv = Number($('#ehrv').val());
   var ehiv = Number($('#ehiv').val());
@@ -88,6 +97,13 @@ function ehcalc(){
   ehresult = Math.floor((ehrv+ehiv+ehev+60));
   $('#ehresult').html(ehresult);
   $('#youhres').html(ehresult);
+}
+
+function etypecalc(){
+  var etype1 = $('#etype1').val();
+  var etype2 = $('#etype2').val();
+  $('#youtype1').html(etype1);
+  $('#youtype2').html(etype2);
 }
 
 function eacalc(){
@@ -157,23 +173,13 @@ function escalc(){
   $('#esresult').html(esresult);
 }
 
-function damageclac(){
+function clickBtn1(){
   // 技の分類
   var aorc = Number($('#aorc').val());
+  // 技のタイプ
+  var tectype = $('#tectype').val();
   // 技の威力
   var power = Number($('#power').val());
-  // タイプ一致
-  var match = Number($('#match').val());
-  // タイプ相性
-  var comp =　Number($('#comp').val());
-  // 天候攻撃側
-  var myweat = Number($('#myweat').val());
-  // フィールド攻撃側
-  var myfield = Number($('#myfield').val());
-  // 天候防御
-  var youweat = Number($('#youweat').val());
-  // 不xーるど防御
-  var youfield = Number($('#youfield').val());
   // こうげき状態
   var mystats = Number($('#mystats').val());
   //防御状態
@@ -184,55 +190,691 @@ function damageclac(){
   var mytool = Number($('#mytool').val());
   // 防御道具
   var youtool = Number($('#youtool').val());
+
+// タイプ一致の計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var atype1 = $('#atype1').val();
+  var atype2 = $('#atype2').val();
+  var match = 1
+  if (tectype == atype1 || tectype == atype2) {
+    match = 1.5
+  }
+// 弱点の計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var etype1 = $('#etype1').val();
+  var etype2 = $('#etype2').val();
+  var comp = 1
+  if (tectype == "ノーマル") {
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+  }else if (tectype == "かくとう") {
+    if (etype1 == "ノーマル" || etype2 == "ノーマル"){
+      comp = comp*2
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0
+    }
+  }else if (tectype == "ひこう") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "どく") {
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0
+    }
+  }else if (tectype == "じめん") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*2
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0
+    }
+  }else if (tectype == "いわ") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "むし") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ゴースト") {
+    if (etype1 == "ノーマル" || etype2 == "ノーマル"){
+      comp = comp*0
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "はがね") {
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ほのお") {
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "みず") {
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "くさ") {
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*2
+    }
+
+    if (etype1 == "いわ" || etype2 == "いわ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "むし" || etype2 == "むし"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "でんき") {
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "でんき" || etype2 == "でんき"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*0
+    }
+  }else if (tectype == "エスパー") {
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0
+    }
+  }else if (tectype == "こおり") {
+    if (etype1 == "くさ" || etype2 == "くさ"){
+      comp = comp*2
+    }
+
+    if (etype1 == "じめん" || etype2 == "じめん"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ひこう" || etype2 == "ひこう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "みず" || etype2 == "みず"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "こおり" || etype2 == "こおり"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "ドラゴン") {
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0
+    }
+  }else if (tectype == "あく") {
+    if (etype1 == "エスパー" || etype2 == "エスパー"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ゴースト" || etype2 == "ゴースト"){
+      comp = comp*2
+    }
+
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "フェアリー" || etype2 == "フェアリー"){
+      comp = comp*0.5
+    }
+  }else if (tectype == "フェアリー") {
+    if (etype1 == "かくとう" || etype2 == "かくとう"){
+      comp = comp*2
+    }
+
+    if (etype1 == "あく" || etype2 == "あく"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン"){
+      comp = comp*2
+    }
+
+    if (etype1 == "ほのお" || etype2 == "ほのお"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "どく" || etype2 == "どく"){
+      comp = comp*0.5
+    }
+
+    if (etype1 == "はがね" || etype2 == "はがね"){
+      comp = comp*0.5
+    }
+  }
+
+// 天候補正計算~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var w = document.getElementById( "weat" ) ;
+  var radioNodeList = w.weatname ;
+  var weat = radioNodeList.value ;
+  var weatmag = 1
+  if (weat == "---") {
+
+  }else if (weat == "あめ") {
+    if (tectype == "ほのお") {
+      weatmag = weatmag*0.5
+    }else if (tectype == "みず") {
+      weatmag = weatmag*1.5
+    }
+
+  }else if (weat == "はれ") {
+    if (tectype == "ほのお") {
+      weatmag = weatmag*1.5
+    }else if (tectype == "みず") {
+      weatmag = weatmag*0.5
+    }
+
+  }else if (weat == "すな") {
+    if (etype1 == "いわ" || etype2 == "いわ") {
+      edresult = edresult*1.5
+    }
+  }else if (weat == "あられ") {
+
+  }
+
+// フィールド補正~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  var f = document.getElementById( "field" ) ;
+  var radioNodeList = f.fieldname ;
+  var field = radioNodeList.value ;
+  var fieldmag = 1
+  if (field == "---") {
+
+  }else if (field == "エレキ") {
+    if (tectype == "でんき") {
+      fieldmag = fieldmag*1.3
+    }
+
+  }else if (field == "グラス") {
+    if (tectype == "くさ") {
+      fieldmag = fieldmag*1.3
+    }
+
+  }else if (field == "サイコ") {
+    if (tectype == "エスパー") {
+      fieldmag = fieldmag*1.3
+    }
+  }else if (field == "ミスト") {
+    if (etype1 == "ドラゴン" || etype2 == "ドラゴン") {
+      fieldmag = fieldmag*0.5
+    }
+  }
+
   if (aorc == 0){
-    var power = Math.round(power*myfield);
-    var power = Math.round(power*youfield);
+    var power = Math.round(power*fieldmag);
     var maxdamage = Math.floor(22*power*aresult/ebresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
-    var maxdamage = Math.ceil(maxdamage*youweat-0.5);
-    var maxdamage = Math.ceil(maxdamage*myweat-0.5);
+    var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
+    var exmaxdamage = Math.ceil(maxdamage*1.5-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
+    var exlowdamage = Math.floor(exmaxdamage*0.85);
+
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*match-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*match-0.5);
+
     var maxdamage = Math.floor(maxdamage*comp);
     var lowdamage = Math.floor(lowdamage*comp);
+    var exmaxdamage = Math.floor(exmaxdamage*comp);
+    var exlowdamage = Math.floor(exlowdamage*comp);
+
     var maxdamage = Math.ceil(maxdamage*mystats-0.5);
     var lowdamage = Math.ceil(lowdamage*mystats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mystats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mystats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youstats-0.5);
     var lowdamage = Math.ceil(lowdamage*youstats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youstats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youstats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*mytool-0.5);
     var lowdamage = Math.ceil(lowdamage*mytool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mytool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mytool-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youtool-0.5);
     var lowdamage = Math.ceil(lowdamage*youtool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youtool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youtool-0.5);
+
   }else{
-    var power = Math.round(power*myfield);
-    var power = Math.round(power*youfield);
+    var power = Math.round(power*fieldmag);
     var maxdamage = Math.floor(22*power*cresult/edresult);
     var maxdamage = Math.floor(maxdamage/50 + 2);
-    var maxdamage = Math.ceil(maxdamage*youweat-0.5);
-    var maxdamage = Math.ceil(maxdamage*myweat-0.5);
+    var maxdamage = Math.ceil(maxdamage*weatmag-0.5);
+    var exmaxdamage = Math.ceil(maxdamage*1.5-0.5);
     var lowdamage = Math.floor(maxdamage*0.85);
+    var exlowdamage = Math.floor(exmaxdamage*0.85);
+
     var maxdamage = Math.ceil(maxdamage*match-0.5);
     var lowdamage = Math.ceil(lowdamage*match-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*match-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*match-0.5);
+
     var maxdamage = Math.floor(maxdamage*comp);
     var lowdamage = Math.floor(lowdamage*comp);
+    var exmaxdamage = Math.floor(exmaxdamage*comp);
+    var exlowdamage = Math.floor(exlowdamage*comp);
+
     var maxdamage = Math.ceil(maxdamage*mystats-0.5);
     var lowdamage = Math.ceil(lowdamage*mystats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mystats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mystats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youstats-0.5);
     var lowdamage = Math.ceil(lowdamage*youstats-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youstats-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youstats-0.5);
+
     var maxdamage = Math.ceil(maxdamage*mytool-0.5);
     var lowdamage = Math.ceil(lowdamage*mytool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*mytool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*mytool-0.5);
+
     var maxdamage = Math.ceil(maxdamage*youtool-0.5);
     var lowdamage = Math.ceil(lowdamage*youtool-0.5);
+    var exmaxdamage = Math.ceil(exmaxdamage*youtool-0.5);
+    var exlowdamage = Math.ceil(exlowdamage*youtool-0.5);
   }
   var hres = Math.floor(ehresult*youdaimax);
   var maxdamageper = Math.round(maxdamage/hres*1000);
   var lowdamageper = Math.round(lowdamage/hres*1000);
+  var exmaxdamageper = Math.round(exmaxdamage/hres*1000);
+  var exlowdamageper = Math.round(exlowdamage/hres*1000);
+
   var maxdamageper = maxdamageper/10
   var lowdamageper = lowdamageper/10
+  var exmaxdamageper = exmaxdamageper/10
+  var exlowdamageper = exlowdamageper/10
+
+  $('.popup').toggleClass('active');
 
   $('#lowdamage').html(lowdamage);
   $('#maxdamage').html(maxdamage);
+  $('#exlowdamage').html(exlowdamage);
+  $('#exmaxdamage').html(exmaxdamage);
+
   $('#lowdamageper').html(lowdamageper);
   $('#maxdamageper').html(maxdamageper);
+  $('#exlowdamageper').html(exlowdamageper);
+  $('#exmaxdamageper').html(exmaxdamageper);
+
+  if (weat == "すな") {
+    if (etype1 == "いわ" || etype2 == "いわ") {
+      edresult = edresult/3*2
+    }
+  }
+  var damagecalc = maxdamageper - lowdamageper
+  var exdamagecalc = exmaxdamageper - exlowdamageper
+
+  if (lowdamageper > 100) {
+    $('#damagebar').append(`<span class="per" style="width: 100%;">確定1発！</span>`)
+
+  }else if (maxdamageper > 100 && lowdamageper <= 100) {
+    $('#damagebar').append(`<span class="per" style="width: 100%;">乱数1発！</span>`)
+
+  }else if (lowdamageper <= 100) {
+    $('#damagebar').append(`<span class="per" style="width: ${lowdamageper}%;">${lowdamageper}%</span>
+                            <span class="maxper" style="width: ${damagecalc}%;"></span>`)
+  }
+
+  if (exlowdamageper > 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: 100%;">確定1発！</span>`)
+
+  }else if (exmaxdamageper > 100 && exlowdamageper <= 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: 100%;">乱数1発！</span>`)
+
+  }else if (exlowdamageper <= 100) {
+    $('#exdamagebar').append(`<span class="per" style="width: ${exlowdamageper}%;">${exlowdamageper}%</span>
+                            <span class="maxper" style="width: ${exdamagecalc}%;"></span>`)
+  }
+}
+
+function clickBtn2() {
+  $('.popup').toggleClass('active');
+  $('#damagebar').children().remove();
+  $('#exdamagebar').children().remove();
 }

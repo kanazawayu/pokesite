@@ -3,6 +3,89 @@
     .attack
       .attack__title
         攻撃側ステータス
+      .attack__type
+        %span
+          タイプ１
+        %select{id: 'atype1', oninput: 'typecalc()'}
+          %option{value: '---'}
+            ーーー
+          %option{value: 'ノーマル'}
+            ノーマル
+          %option{value: 'かくとう'}
+            かくとう
+          %option{value: 'ひこう'}
+            ひこう
+          %option{value: 'どく'}
+            どく
+          %option{value: 'じめん'}
+            じめん
+          %option{value: 'いわ'}
+            いわ
+          %option{value: 'むし'}
+            むし
+          %option{value: 'ゴースト'}
+            ゴースト
+          %option{value: 'はがね'}
+            はがね
+          %option{value: 'ほのお'}
+            ほのお
+          %option{value: 'みず'}
+            みず
+          %option{value: 'くさ'}
+            くさ
+          %option{value: 'でんき'}
+            でんき
+          %option{value: 'エスパー'}
+            エスパー
+          %option{value: 'こおり'}
+            こおり
+          %option{value: 'ドラゴン'}
+            ドラゴン
+          %option{value: 'あく'}
+            あく
+          %option{value: 'フェアリー'}
+            フェアリー
+        %span
+          タイプ２
+        %select{id: 'atype2', oninput: 'typecalc()'}
+          %option{value: '---'}
+            ーーー
+          %option{value: 'ノーマル'}
+            ノーマル
+          %option{value: 'かくとう'}
+            かくとう
+          %option{value: 'ひこう'}
+            ひこう
+          %option{value: 'どく'}
+            どく
+          %option{value: 'じめん'}
+            じめん
+          %option{value: 'いわ'}
+            いわ
+          %option{value: 'むし'}
+            むし
+          %option{value: 'ゴースト'}
+            ゴースト
+          %option{value: 'はがね'}
+            はがね
+          %option{value: 'ほのお'}
+            ほのお
+          %option{value: 'みず'}
+            みず
+          %option{value: 'くさ'}
+            くさ
+          %option{value: 'でんき'}
+            でんき
+          %option{value: 'エスパー'}
+            エスパー
+          %option{value: 'こおり'}
+            こおり
+          %option{value: 'ドラゴン'}
+            ドラゴン
+          %option{value: 'あく'}
+            あく
+          %option{value: 'フェアリー'}
+            フェアリー
       .attack__calc
         .attack__calc__value
           %span
@@ -159,6 +242,89 @@
     .defence
       .defence__title
         防御側ステータス
+      .defence__type
+        %span
+          タイプ１
+        %select{id: 'etype1', oninput: 'etypecalc()'}
+          %option{value: '---'}
+            ーーー
+          %option{value: 'ノーマル'}
+            ノーマル
+          %option{value: 'かくとう'}
+            かくとう
+          %option{value: 'ひこう'}
+            ひこう
+          %option{value: 'どく'}
+            どく
+          %option{value: 'じめん'}
+            じめん
+          %option{value: 'いわ'}
+            いわ
+          %option{value: 'むし'}
+            むし
+          %option{value: 'ゴースト'}
+            ゴースト
+          %option{value: 'はがね'}
+            はがね
+          %option{value: 'ほのお'}
+            ほのお
+          %option{value: 'みず'}
+            みず
+          %option{value: 'くさ'}
+            くさ
+          %option{value: 'でんき'}
+            でんき
+          %option{value: 'エスパー'}
+            エスパー
+          %option{value: 'こおり'}
+            こおり
+          %option{value: 'ドラゴン'}
+            ドラゴン
+          %option{value: 'あく'}
+            あく
+          %option{value: 'フェアリー'}
+            フェアリー
+        %span
+          タイプ２
+        %select{id: 'etype2', oninput: 'etypecalc()'}
+          %option{value: '---'}
+            ーーー
+          %option{value: 'ノーマル'}
+            ノーマル
+          %option{value: 'かくとう'}
+            かくとう
+          %option{value: 'ひこう'}
+            ひこう
+          %option{value: 'どく'}
+            どく
+          %option{value: 'じめん'}
+            じめん
+          %option{value: 'いわ'}
+            いわ
+          %option{value: 'むし'}
+            むし
+          %option{value: 'ゴースト'}
+            ゴースト
+          %option{value: 'はがね'}
+            はがね
+          %option{value: 'ほのお'}
+            ほのお
+          %option{value: 'みず'}
+            みず
+          %option{value: 'くさ'}
+            くさ
+          %option{value: 'でんき'}
+            でんき
+          %option{value: 'エスパー'}
+            エスパー
+          %option{value: 'こおり'}
+            こおり
+          %option{value: 'ドラゴン'}
+            ドラゴン
+          %option{value: 'あく'}
+            あく
+          %option{value: 'フェアリー'}
+            フェアリー
       .defence__calc
         .defence__calc__value
           %span
@@ -315,170 +481,249 @@
   .result
     .result__title
       ダメージ計算
-    .result__calc
-      .result__calc__my
-        %span
-          自分のこうげき:
-        %span#myares
-          ーーー
-        %span
-          自分のとくこう:
-        %span#mycres
-          ーーー
-      .result__calc__your
-        %span
-          相手のHP:
-        %span#youhres
-          ーーー
-        %span
-          相手のぼうぎょ:
-        %span#youbres
-          ーーー
-        %span
-          相手のとくぼう:
-        %span#youdres
-          ーーー
-      .result__calc__tec
-        %span
-          わざ
-        %span
-          ぶんるい
-        %select{id: 'aorc', oninput: 'damageclac()'}
-          %option{value: '0'}
-            物理
-          %option{value: '1'}
-            特殊
-        %span
-          いりょく
-        %input{id: 'power',type: 'number', oninput: 'damageclac()'}
-        %span
-          タイプ一致補正
-        %select{id: 'match', oninput: 'damageclac()'}
-          %option{value: '1.5'}
-            あり
-          %option{value: '1'}
-            なし
-        %span
-          タイプ相性
-        %select{id: 'comp', oninput: 'damageclac()'}
-          %option{value: '4'}
-            ばつぐん(4倍)
-          %option{value: '2'}
-            ばつぐん(2倍)
-          %option{value: '1', selected: 'selected'}
-            等倍
-          %option{value: '0.5'}
-            いまひとつ(1/2)
-          %option{value: '0.25'}
-            いまひとつ(1/4)
-          %option{value: '0'}
-            こうかがない
-      .result__calc__env
-        %span
-          天候補正(攻撃側)
-        %select{id: 'myweat', oninput: 'damageclac()'}
-          %option{value: '1.5'}
-            あり(1.5倍)
-          %option{value: '1', selected: 'selected'}
-            なし
-        %span
-          フィールド補正(攻撃側)
-        %select{id: 'myfield', oninput: 'damageclac()'}
-          %option{value: '1.3'}
-            あり(1.3倍)
-          %option{value: '1', selected: 'selected'}
-            なし
-        %span
-          天候補正(防御側)
-        %select{id: 'youweat', oninput: 'damageclac()'}
-          %option{value: '0.5'}
-            あり(0.5倍)
-          %option{value: '1', selected: 'selected'}
-            なし
-        %span
-          フィールド補正(防御側)
-        %select{id: 'youfield', oninput: 'damageclac()'}
-          %option{value: '0.5'}
-            あり(0.5倍)
-          %option{value: '1', selected: 'selected'}
-            なし
-      .result__calc__stats
-        %span
-          攻撃側状態
-        %select{id: 'mystats', oninput: 'damageclac()'}
-          %option{value: '1'}
-            なし
-          %option{value: '0.5'}
-            やけど
-        %span
-          防御側状態
-        %select{id: 'youstats', oninput: 'damageclac()'}
-          %option{value: '1'}
-            なし
-          %option{value: '0.5'}
-            壁
-        %span
-          防御側ダイマックス
-        %select{id: 'youdaimax', oninput: 'damageclac()'}
-          %option{value: '1'}
-            なし
-          %option{value: '2'}
-            ダイマックス
-      .result__calc__tool
-        %span
-          攻撃側持ち物
-        %select{id: 'mytool', oninput: 'damageclac()'}
-          %option{value: '1'}
-            アイテムなし
-          %option{value: '1.3'}
-            いのちのたま
-          %option{value: '1.5'}
-            こだわり系アイテム
-          %option{value: '1.2'}
-            タイプ強化系
-          %option{value: '1.2'}
-            たつじんのおび(ばつぐんの時)
-          %option{value: '1.1'}
-            ちからのはちまき
-          %option{value: '1.1'}
-            ものしりめがね
-        %span
-          防御側持ち物
-        %select{id: 'youtool', oninput: 'damageclac()'}
-          %option{value: '1'}
-            アイテムなし
-          %option{value: '0.5'}
-            半減きのみ
-          %option{value: '1.5'}
-            しんかのきせき
-          %option{value: '1.5'}
-            とつげきチョッキ
+    .result__box
+      .result__box__calc
+        .result__box__calc__my
+          %span
+            自分のこうげき:
+          %span#myares
+            ーーー
+          %span
+            自分のとくこう:
+          %span#mycres
+            ーーー
+          %span
+            自分のタイプ１:
+          %span#mytype1
+            ーーー
+          %span
+            自分のタイプ２:
+          %span#mytype2
+            ーーー
+        .result__box__calc__your
+          %span
+            相手のHP:
+          %span#youhres
+            ーーー
+          %span
+            相手のぼうぎょ:
+          %span#youbres
+            ーーー
+          %span
+            相手のとくぼう:
+          %span#youdres
+            ーーー
+          %span
+            相手のタイプ１:
+          %span#youtype1
+            ーーー
+          %span
+            相手のタイプ２:
+          %span#youtype2
+            ーーー
+        .result__box__calc__tec
+          %span
+            わざ
+          %span
+            ぶんるい
+          %select{id: 'aorc'}
+            %option{value: '0'}
+              物理
+            %option{value: '1'}
+              特殊
+          %span
+            いりょく
+          %input{id: 'power',type: 'number'}
+          %span
+            技タイプ
+          %select{id: 'tectype'}
+            %option{value: '---'}
+              ーーー
+            %option{value: 'ノーマル'}
+              ノーマル
+            %option{value: 'かくとう'}
+              かくとう
+            %option{value: 'ひこう'}
+              ひこう
+            %option{value: 'どく'}
+              どく
+            %option{value: 'じめん'}
+              じめん
+            %option{value: 'いわ'}
+              いわ
+            %option{value: 'むし'}
+              むし
+            %option{value: 'ゴースト'}
+              ゴースト
+            %option{value: 'はがね'}
+              はがね
+            %option{value: 'ほのお'}
+              ほのお
+            %option{value: 'みず'}
+              みず
+            %option{value: 'くさ'}
+              くさ
+            %option{value: 'でんき'}
+              でんき
+            %option{value: 'エスパー'}
+              エスパー
+            %option{value: 'こおり'}
+              こおり
+            %option{value: 'ドラゴン'}
+              ドラゴン
+            %option{value: 'あく'}
+              あく
+            %option{value: 'フェアリー'}
+              フェアリー
+        .result__box__calc__env
+          %span
+            天候補正
+          %form{id: 'weat'}
+            %input{type: 'radio', name: 'weatname', value: "---", id: "1", checked: "checked"}
+            %label{for: "1"}
+              なし
+            %input{type: 'radio', name: 'weatname', id: "2", value: "あめ"}
+            %label{for: "2"}
+              あめ
+            %input{type: 'radio', name: 'weatname', id: "3", value: "はれ"}
+            %label{for: "3"}
+              はれ
+            %input{type: 'radio', name: 'weatname', id: "4", value: "すな"}
+            %label{for: "4"}
+              すな
+            %input{type: 'radio', name: 'weatname', id: "5", value: "あられ"}
+            %label{for: "5"}
+              あられ
+          %span
+            フィールド補正
+          %form{id: 'field'}
+            %input{type: 'radio', name: 'fieldname', id: "6", value: "---", checked: "checked"}
+            %label{for: "6"}
+              なし
+            %input{type: 'radio', name: 'fieldname', id: "7", value: "エレキ"}
+            %label{for: "7"}
+              エレキ
+            %input{type: 'radio', name: 'fieldname', id: "8", value: "グラス"}
+            %label{for: "8"}
+              グラス
+            %input{type: 'radio', name: 'fieldname', id: "9", value: "サイコ"}
+            %label{for: "9"}
+              サイコ
+            %input{type: 'radio', name: 'fieldname', id: "10", value: "ミスト"}
+            %label{for: "10"}
+              ミスト
+        .result__box__calc__stats
+          %span
+            攻撃側状態
+          %select{id: 'mystats'}
+            %option{value: '1'}
+              なし
+            %option{value: '0.5'}
+              やけど
+          %span
+            防御側状態
+          %select{id: 'youstats'}
+            %option{value: '1'}
+              なし
+            %option{value: '0.5'}
+              壁
+          %span
+            防御側ダイマックス
+          %select{id: 'youdaimax'}
+            %option{value: '1'}
+              なし
+            %option{value: '2'}
+              ダイマックス
+        .result__box__calc__tool
+          %span
+            攻撃側持ち物
+          %select{id: 'mytool'}
+            %option{value: '1'}
+              アイテムなし
+            %option{value: '1.3'}
+              いのちのたま
+            %option{value: '1.5'}
+              こだわり系アイテム
+            %option{value: '1.2'}
+              タイプ強化系
+            %option{value: '1.2'}
+              たつじんのおび(ばつぐんの時)
+            %option{value: '1.1'}
+              ちからのはちまき
+            %option{value: '1.1'}
+              ものしりめがね
+          %span
+            防御側持ち物
+          %select{id: 'youtool'}
+            %option{value: '1'}
+              アイテムなし
+            %option{value: '0.5'}
+              半減きのみ
+            %option{value: '1.5'}
+              しんかのきせき
+            %option{value: '1.5'}
+              とつげきチョッキ
+      .buttan
+        %input{type: "button", value: "計算する", onclick: "clickBtn1()"}
+  .battle
+    = render "layouts/urutora"
+    = render "layouts/taima"
+    = render "layouts/su-pa"
+.popup
   .real
     .real__title
       計算結果
     .real__damage
       %span
         ダメージ:
-      %span{id: 'lowdamage'}
-        ーーー
+      .display
+        %span{id: 'lowdamage'}
+          ーーー
+        %span
+          〜
+        %span{id: 'maxdamage'}
+          ーーー
+    .real__damage
       %span
-        〜
-      %span{id: 'maxdamage'}
-        ーーー
+        急所時ダメージ:
+      .display
+        %span{id: 'exlowdamage'}
+          ーーー
+        %span
+          〜
+        %span{id: 'exmaxdamage'}
+          ーーー
     .real__damage
       %span
         ダメージ割合
+      .block
+        .display
+          %span
+            (
+          %span{id: 'lowdamageper'}
+            ーーー
+          %span
+            ％〜
+          %span{id: 'maxdamageper'}
+            ーーー
+          %span
+            ％)
+        .bar#damagebar
+    .real__damage
       %span
-        (
-      %span{id: 'lowdamageper'}
-        ーーー
-      %span
-        ％〜
-      %span{id: 'maxdamageper'}
-        ーーー
-      %span
-        ％)
-  .battle
-    = render "layouts/urutora"
-    = render "layouts/taima"
-    = render "layouts/su-pa"
+        急所時ダメージ割合:
+      .block
+        .display
+          %span
+            (
+          %span{id: 'exlowdamageper'}
+            ーーー
+          %span
+            ％〜
+          %span{id: 'exmaxdamageper'}
+            ーーー
+          %span
+            ％)
+        .bar#exdamagebar
+    .real__buttan
+      %input{type: "button", value: "閉じる", onclick: "clickBtn2()"}
