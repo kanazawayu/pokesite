@@ -5,6 +5,7 @@
 
 .content {
   &__head {
+    margin-top: 10px;
     display: flex;
     border-top: solid 3px crimson;
     border-bottom: solid 3px crimson;
@@ -73,6 +74,36 @@
             background: #fff;
             border-radius: 50%;
           }
+        }
+      }
+    }
+  }
+  &__favorite {
+    .btn2 {
+      width: 125px;
+      padding: 6px 10px;
+      margin-left: 10px;
+      border-radius: 40px;
+      color: #3CCACE;
+      border: 1px solid #ffb340;
+      .like-create {
+        color: #0099e8;
+        i {
+          color: lightgrey;
+        }
+      }
+    }
+    .btn1 {
+      width: 190px;
+      padding: 6px 10px;
+      margin-left: 10px;
+      border-radius: 40px;
+      color: #3CCACE;
+      border: 1px solid #ffb340;
+      .like-delete {
+        color: #0099e8;
+        i {
+          color: #0099e8;
         }
       }
     }

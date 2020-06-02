@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :articles
   has_many :comments
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_articles, through: :favorites, source: :article
 
   validates :name, presence: true, uniqueness: true
 end
