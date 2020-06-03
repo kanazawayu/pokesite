@@ -25,8 +25,12 @@
                 = link_to '編集', "/articles/#{@article.id}/edit", method: :get
               %li
                 = link_to '削除', "/articles/#{@article.id}", method: :delete
-  .content__favorite{id: "like-#{@article.id}"}
-    = render "layouts/favorite", article: @article
+  - if user_signed_in?
+    .content__favorite{id: "like-#{@article.id}"}
+      = render "layouts/favorite", article: @article
+  - else
+    .content__favorite
+      いいねをするにはログインが必要です
   .content__comments
     - if current_user
       = form_with(model: [@article, @comment], local: true, class: "new") do |form|
