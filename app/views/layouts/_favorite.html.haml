@@ -1,0 +1,12 @@
+- if Favorite.find_by(user_id: current_user.id, article_id: article.id)
+  .btn1
+    = link_to article_favorite_path(article.id, current_user.id), method: :delete, class: "like-delete", remote: true do
+      = icon('fa', 'star')
+      お気に入り追加済み
+      = article.favorites.length
+- else
+  .btn2
+    = link_to article_favorites_path(article.id), method: :post, class: "like-create", remote: true do
+      = icon('fa', 'star')
+      お気に入り
+      = article.favorites.length
