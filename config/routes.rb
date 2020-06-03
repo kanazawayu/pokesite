@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :articles do
     resources :comments, only: :create
+    resources :favorites , only: [:create, :destroy]
   end
   resources :damages, only: :index
   resources :users, only: :show
