@@ -30,6 +30,22 @@
       bottom: 100px;
       left: 405px;
     }
+    .favorite-link {
+      display: block;
+      font-size: 20px;
+      margin: 12px 40px;
+      padding: 4px;
+      background-color: orange;
+      border: solid 1px orange;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 4px 4px black;
+    }
+    a:active {
+      border-radius: 12px;
+      box-shadow: 2px 2px 4px inset black;
+      outline: 0;
+    }
   }
   &__post {
     padding: 10px;
