@@ -6,7 +6,7 @@
       = @name
       さんの投稿の一覧
     .favorite
-      = link_to "いいねした投稿へ", favorites_path, class: "favorite-link"
+      = link_to "お気に入りの投稿", favorites_path, class: "favorite-link"
   .content__post
     - @articles.each do |article|
       = render partial: "articles/article", locals: { article: article }
