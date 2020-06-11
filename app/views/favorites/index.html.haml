@@ -1,0 +1,13 @@
+.content
+  .content__head
+    .pika1
+      = render "layouts/pikatyu"
+    .title
+      お気に入り一覧
+    .favorite
+      = link_to "#{@name}のページへ", user_path(current_user.id), class: "favorite-link"
+  .content__post
+    - current_user.favorite_articles.each do |article|
+      - if article.user_id != current_user.id
+        = render partial: "articles/article", locals: { article: article }
+  = paginate(@articles)

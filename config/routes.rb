@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :damages, only: :index
   resources :users, only: :show
+  resources :favorites, only: :index
 end
